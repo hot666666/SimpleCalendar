@@ -56,6 +56,10 @@ The **read(from:to:)** method in MyItemProvider must return data corresponding t
 
 This method is called by the **SimpleCalendar** view, and the data should be returned as a dictionary with dates as keys.
 
+## Supported Platforms
+
+iOS 16.0+
+
 ## License
 
 SimpleCalendar is available under the MIT license. See the [LICENSE](LICENSE) file for more information.
