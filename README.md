@@ -23,28 +23,28 @@ The data must conform to the **Itemable** protocol and is passed to the **Simple
 ```swift
 // Implementing a model that conforms to the Itemable protocol
 struct MyItem: Itemable {
-	let id: String = UUID().uuidString
-	var date: Date
-	var content: String
-	var color: Color
+    let id: String = UUID().uuidString
+    var date: Date
+    var content: String
+    var color: Color
 
-	init(date: Date, content: String, color: Color) {
-		self.date = date
-		self.content = content
-		self.color = color
-	}
+    init(date: Date, content: String, color: Color) {
+	self.date = date
+	self.content = content
+	self.color = color
+    }
 }
 
 // Implementing an object that conforms to the ItemProviderType protocol
 class MyItemProvider<T: Itemable>: ItemProviderType {
-	func read(from: Date, to: Date) -> [Date: [T]] {
-        // Implement logic to fetch data and return it
-        // ...
+    func read(from: Date, to: Date) -> [Date: [T]] {
+    // Implement logic to fetch data and return it
+    // ...
 
 
 // Creating the SimpleCalendar view
 struct ContentView: View {
-    @StateObject var itemProvider = MyItemProvider<MyItem>()
+    var itemProvider = MyItemProvider<MyItem>()
 
     var body: some View {
         SimpleCalendar(itemProvider: itemProvider)
